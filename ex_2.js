@@ -47,14 +47,6 @@ const users = [
     avatar: 'https://reqres.in/img/faces/12-image.jpg',
     age: 45,
   },
-  {
-    id: 13,
-    email: 'rachel.howell@reqres.in',
-    first_name: 'Tomias',
-    last_name: 'Howell',
-    avatar: 'https://reqres.in/img/faces/12-image.jpg',
-    age: 34,
-  },
 ]
 
 const info = {
