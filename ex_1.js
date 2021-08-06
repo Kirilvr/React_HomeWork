@@ -49,6 +49,8 @@ const users = [
   },
 ]
 
-const info = users.map((user) => `${user.first_name} ${user.last_name}`).join()
+const info = users
+  .map(({ first_name, last_name }) => first_name + ' ' + last_name)
+  .join(', ')
 
 console.log(info)
