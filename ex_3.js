@@ -49,10 +49,10 @@ const users = [
   },
 ]
 
-const info = users.map((user) => {
+const info = users.map(({ id, first_name, last_name }) => {
   return {
-    id: user.id,
-    name: user.first_name + ' ' + user.last_name,
+    id,
+    name: first_name + ' ' + last_name,
   }
 })
 
