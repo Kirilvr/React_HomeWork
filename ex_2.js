@@ -49,13 +49,25 @@ const users = [
   },
 ]
 
-const info = {
-  average: `${
-    users.reduce((total, user) => total + user.age, 0) / users.length
-  }`,
-  over_30: `${users.filter((user) => user.age > 30).length}`,
-  over_40: `${users.filter((user) => user.age > 40).length}`,
-  over_18: `${users.filter((user) => user.age > 18).length}`,
-}
-
-console.log(info)
+const info = users.reduce(
+  (
+    { average, over_30, over_40, over_18 },
+    { age },
+    { length: usersLength },
+    index
+  ) => {
+    const lastUser = index + 1 === usersLength
+    return {
+      average: lastUser ? (average + age) / usersLength : average + age,
+      over_30: age > 30 ? over_30 + 1 : over_30,
+      over_40: age > 40 ? over_40 + 1 : over_40,
+      over_18: age > 18 ? over_18 + 1 : over_18,
+    }
+  },
+  {
+    average: 0,
+    over_30: 0,
+    over_40: 0,
+    over_18: 0,
+  }
+)

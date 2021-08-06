@@ -55,5 +55,3 @@ const info = users.map(({ id, first_name, last_name }) => {
     name: first_name + ' ' + last_name,
   }
 })
-
-console.log(info)

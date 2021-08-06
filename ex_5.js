@@ -52,5 +52,3 @@ const users = [
 const info = users
   .filter((user) => user.age < 40)
   .sort((a, b) => (a.age > b.age ? 1 : -1))
-
-console.log(info)

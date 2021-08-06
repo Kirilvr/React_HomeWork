@@ -49,5 +49,3 @@ const users = [
   },
 ]
 const info = users.map((user) => user.email).sort()
-
-console.log(info)
