@@ -50,12 +50,8 @@ const users = [
 ]
 
 const info = users.reduce(
-  (
-    { average, over_30, over_40, over_18 },
-    { age },
-    { length: usersLength },
-    index
-  ) => {
+  ({ average, over_30, over_40, over_18 }, { age }, index) => {
+    const usersLength = users.length
     const lastUser = index + 1 === usersLength
     return {
       average: lastUser ? (average + age) / usersLength : average + age,
