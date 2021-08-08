@@ -48,3 +48,15 @@ const users = [
     age: 45,
   },
 ]
+
+const info = users.reduce((acc, { last_name }) => {
+  const firstLetterLastName = last_name[0].toLowerCase()
+
+  if (acc.hasOwnProperty(firstLetterLastName)) {
+    return {
+      ...acc,
+      [firstLetterLastName]: [...acc[firstLetterLastName], last_name],
+    }
+  }
+  return { ...acc, [firstLetterLastName]: [last_name] }
+}, {})
