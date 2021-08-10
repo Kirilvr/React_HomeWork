@@ -99,15 +99,9 @@ const mass = [
   },
 ]
 
-const film = mass.map(({ title }) => title)
-
-const createNewMass = (array, str) =>
-  Array.from(
-    new Set(
-      array.reduce((acc, item) => {
-        if (item.toLowerCase().includes(str.toLowerCase()))
-          return [...acc, item]
-        return acc
-      }, [])
-    )
-  )
+const createNewMass = (mass, str) =>
+  mass.reduce((acc, item) => {
+    if (item.title.toLowerCase().includes(str.toLowerCase()))
+      return [...acc, item]
+    return acc
+  }, [])
