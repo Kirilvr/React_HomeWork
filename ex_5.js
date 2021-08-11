@@ -98,20 +98,9 @@ const mass = [
     production: '1492 Pictures, Heyday Films, Warner Brothers',
   },
 ]
-const actorCareer = mass
-  .map(({ title, actors }) => {
-    const actor = actors.reduce((acc, actor) => {
-      return {
-        ...acc,
-        [actor]: title,
-      }
-    }, {})
-
-    return actor
-  })
-  .reduce((accum, item) => {
-    return {
-      ...accum,
-      ...item,
-    }
-  }, {})
+const actorCareer = mass.reduce((acc, { title, actors }) => {
+  return {
+    ...acc,
+    [actors]: title,
+  }
+}, {})
