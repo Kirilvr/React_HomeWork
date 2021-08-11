@@ -99,10 +99,9 @@ const mass = [
   },
 ]
 
-const newMass = mass.map(({ id, title, released, plot }) => {
-    id,
-    title,
-    released,
-    plot,
-  
-})
+const newMass = mass.map(({ id, title, released, plot }) => ({
+  id,
+  title,
+  released,
+  plot,
+}))
