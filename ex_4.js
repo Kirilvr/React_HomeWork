@@ -100,10 +100,9 @@ const mass = [
 ]
 
 const newMass = mass.map(({ id, title, released, plot }) => {
-  return {
     id,
     title,
     released,
     plot,
-  }
+  
 })
