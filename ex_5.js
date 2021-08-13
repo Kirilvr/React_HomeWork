@@ -98,9 +98,14 @@ const mass = [
     production: '1492 Pictures, Heyday Films, Warner Brothers',
   },
 ]
-const actorCareer = mass.reduce((acc, { title, actors }) => {
-  return {
-    ...acc,
-    [actors]: title,
-  }
-}, {})
+const actorCareer = mass.reduce(
+  (accum, film) =>
+    film.actors.reduce((acc, actor) => {
+      if (!acc[actor]) {
+        return { ...acc, [actor]: [film] }
+      }
+      return { ...acc, [actor]: [...acc[actor], film] }
+    }, accum),
+
+  {}
+)
