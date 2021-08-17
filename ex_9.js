@@ -1,9 +1,10 @@
 const massId = [7, 1, 4]
 
-const namePriceProducts = (products, massId) =>
+const makeToString = (products, massId) =>
   products.reduce((accum, { id, name, price, currency }) => {
     if (massId.includes(id))
-      accum +=
+      accum =
+        accum +
         `${name}` +
         ': цена ' +
         `${price}` +

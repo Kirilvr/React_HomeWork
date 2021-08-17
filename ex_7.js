@@ -1,9 +1,9 @@
-const ingr = ['chicken', 'cheese', 'sauce', 'cucumber']
+const ingredients = ['chicken', 'cheese', 'sauce', 'cucumber']
 
-const includeMassIngredients = (products, ingr) =>
+const hasMassIngredients = (products, ingredients) =>
   products.reduce((accum, product) => {
     if (
-      [...new Set([...product.ingredients, ...ingr])].join() ===
+      [...new Set([...product.ingredients, ...ingredients])].join() ===
       product.ingredients.join()
     )
       return [...accum, product]
